@@ -6,7 +6,6 @@ export const Landing = () => {
 
     return (
         <div className='landing'>
-            <div>Landing</div>
             <button onClick={() => navigate('/cartelle')}>Cartelle</button>
             <button onClick={() => navigate('/tabellone')}>Tabellone</button>
         </div>
