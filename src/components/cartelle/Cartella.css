@@ -17,6 +17,22 @@
     background: rgb(244, 211, 139);
 }
 
+.cartella .casella:nth-child(1) {
+    border-radius: 9px 0px 0px 0px;
+}
+
+.cartella .casella:nth-child(3) {
+    border-radius: 0px 0px 0px 9px;
+}
+
+.cartella .casella:nth-child(25) {
+    border-radius: 0px 9px 0px 0px;
+}
+
+.cartella .casella:nth-child(27) {
+    border-radius: 0px 0px 9px 0px;
+}
+
 .vuota {
     background: rgb(174, 173, 171)
 }
