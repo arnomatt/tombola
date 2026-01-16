@@ -1,0 +1,33 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal {
+    position: absolute;
+    top: 10vh;
+    width: 50vw;
+    background: linear-gradient(to bottom, rgb(162, 162, 207), rgb(198, 198, 223));
+    border: 2px solid black;
+    border-radius: 12px;
+    box-shadow: 9px 6px 12px;
+    animation: fadeInUp 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 12px;
+    padding-bottom: 72px;
+    gap: 15px;
+}
+
+.closeButton {
+    align-self: end;
+    justify-self: start;
+}

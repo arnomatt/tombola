@@ -4,7 +4,7 @@
     width: 100%;
     box-sizing: border-box;
     min-height: 60px;
-    background: rgb(97, 97, 150);
+    background: linear-gradient(to right, rgb(97, 97, 150), rgb(198, 198, 223));
     padding: 10px 30px;
 }
 
