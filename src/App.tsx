@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/tabellone" element={<Tabellone />} />
-          <Route path="/cartelle" element={<Cartelle />} />
+          <Route path="/cartelle/:num" element={<Cartelle />} />
         </Routes>
         {isModalVisible && <Modal />}
       </ModalContext>
