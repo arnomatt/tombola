@@ -6,6 +6,7 @@
 
 export type Card = number[][]; // 3 rows x 9 columns, 0 means empty cell
 
+// AI Generated function for testing
 export function generateCard(): Card {
   // Define column ranges
   const columns = [
