@@ -6,13 +6,25 @@
     align-items: center;
     width: 100%;
     box-sizing: border-box;
-    height: 8vh;
+    height: 2em;
     background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     padding: 10px 30px;
     border: 1px solid black;
+    font-size: 32px;
 }
 
 .navBar a {
     color: var(--text-color);
-    font-size: 2rem;
+}
+
+@media (max-width: 500px) {
+    .navBar {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 420px) {
+    .navBar {
+        font-size: 20px;
+    }
 }

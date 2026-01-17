@@ -1,6 +1,6 @@
 .cartelle {
     display:flex;
     flex-direction: column;
-    margin: 2em;
+    margin: 2em 0;
     gap: 30px;
 }
