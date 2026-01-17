@@ -1,14 +1,18 @@
 .navBar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     display: flex;
     align-items: center;
     width: 100%;
     box-sizing: border-box;
-    min-height: 60px;
-    background: linear-gradient(to right, rgb(97, 97, 150), rgb(198, 198, 223));
+    height: 8vh;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     padding: 10px 30px;
+    border: 1px solid black;
 }
 
 .navBar a {
-    color: rgb(238, 236, 236);
+    color: var(--text-color);
     font-size: 2rem;
 }
