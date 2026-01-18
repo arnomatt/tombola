@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import './Modal.css';
-import { ModalContext } from '../../contexts/modalContext';
+import { ModalContext } from '../../contexts/ModalContext';
 import { useNavigate } from 'react-router';
 
 export const Modal = () => {
