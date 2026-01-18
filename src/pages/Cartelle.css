@@ -4,3 +4,10 @@
     margin: 2em 0;
     gap: 30px;
 }
+
+@media (min-width: 768px) {
+    .cartelle {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

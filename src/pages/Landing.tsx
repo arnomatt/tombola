@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import './Landing.css';
 import { useContext } from "react";
-import { ModalContext } from "../contexts/modalContext";
+import { ModalContext } from "../contexts/ModalContext";
 
 export const Landing = () => {
     const modalContext = useContext(ModalContext);

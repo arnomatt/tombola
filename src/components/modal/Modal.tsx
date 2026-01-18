@@ -25,6 +25,8 @@ export const Modal = () => {
             <button onClick={() => handleClick(4)}>4 Cartelle</button>
             <button onClick={() => handleClick(5)}>5 Cartelle</button>
             <button onClick={() => handleClick(6)}>6 Cartelle</button>
+            <button onClick={() => handleClick(7)}>7 Cartelle</button>
+            <button onClick={() => handleClick(8)}>8 Cartelle</button>
         </div >
     )
 }
