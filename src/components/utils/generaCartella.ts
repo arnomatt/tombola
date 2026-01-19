@@ -1,4 +1,10 @@
-export type Card = number[][]; // 3 rows x 9 columns, 0 means empty cell
+// 9 columns total
+// first column has 1-9, second 10-19 etc. Only the last one has 80-90 numbers (10 numbers)
+// first pick 1 random number from each column (constraint on at least 1 number per column)
+// then randomly select other 6 numbers (constraint on no more than 3 numbers allowed on a column)
+// position the numbers so that each row has exactly 5 numbers in it
+
+export type Cartella = number[][]; // 3 rows x 9 columns, 0 means empty cell
 
 const columns = [
   Array.from({ length: 9 }).map((_, i) => i + 1),
@@ -20,61 +26,76 @@ const pickNumber = (bucket: number) => {
   return columns[bucket][Math.floor(Math.random() * columns[bucket].length)];
 };
 
-const pickNumbers = () => {
-  const numbers = new Set<number>();
-  const picks = new Map<number, number>();
+const buildRowsMask = () => {
+  const remainingBuckets = new Set([0, 1, 2, 3, 4, 5, 6, 7, 8]);
+  const cartella: Cartella = [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  ];
 
-  for (let i = 0; i < columns.length; i++) {
-    const currentPick = pickNumber(i);
-    numbers.add(currentPick);
-    picks.set(i, 1);
-  }
+  for (let i = 0; i < 3; i++) {
+    // 5 picks per row
+    let count = 5;
 
-  while (numbers.size < 15) {
-    const bucket = pickBucket();
-    const picksFromCurrentBucket = picks.get(bucket) ?? 0;
-
-    // skip current bucket if we already had 3 picks
-    if (picksFromCurrentBucket > 2) {
-      continue;
+    while (count > 0) {
+      let tempBucket = pickBucket();
+      // for the last row, we aim to fill all the remaining buckets
+      // otherwise, we pick at random until we find an empty space on the row
+      if (i === 2 && remainingBuckets.size > 0) {
+        tempBucket = [...remainingBuckets][0];
+      } else {
+        while (cartella[i][tempBucket] !== 0) {
+          tempBucket = pickBucket();
+        }
+      }
+      cartella[i][tempBucket] = 1;
+      if (remainingBuckets.has(tempBucket)) {
+        remainingBuckets.delete(tempBucket);
+      }
+      count--;
     }
-
-    // get a new number
-    let currentPick = pickNumber(bucket);
-    while (numbers.has(currentPick)) {
-      currentPick = pickNumber(bucket);
-    }
-
-    // add to set and track how many picks we had from a single bucket
-    numbers.add(currentPick);
-    picks.set(bucket, picksFromCurrentBucket + 1);
   }
-
-  return numbers;
-};
-
-export const generaCartella = () => {
-  const numbers = pickNumbers();
-  const cartella: number[][] = [[], [], []];
-
-  if (numbers.has(90)) {
-    cartella[2].push(90);
-    numbers.delete(90);
-  }
-
-  let index = 0;
-
-  while (numbers.size > 0) {
-    const pickedIndex = Math.floor(Math.random() * numbers.size);
-    const pickedNumber = Array.from(numbers)[pickedIndex];
-    cartella[index % 3].push(pickedNumber);
-    numbers.delete(pickedNumber);
-    index++;
-  }
-
-  cartella.map((row) => row.sort((a, b) => a - b));
 
   return cartella;
 };
 
-console.log(generaCartella());
+export const buildCartella = (): Cartella => {
+  const cartella = buildRowsMask();
+
+  // Assign random numbers to masked positions
+  for (let i = 0; i < 9; i++) {
+    const pickedNumbers: number[] = [];
+    for (let j = 0; j < 3; j++) {
+      if (cartella[j][i] === 1) {
+        let number = pickNumber(i);
+        while (pickedNumbers.includes(number)) {
+          number = pickNumber(i);
+        }
+        cartella[j][i] = number;
+        pickedNumbers.push(number);
+      }
+    }
+  }
+
+  // Sort each column in ascending order
+  for (let i = 0; i < 9; i++) {
+    const colNumbers: number[] = [];
+    for (let j = 0; j < 3; j++) {
+      if (cartella[j][i] !== 0) {
+        colNumbers.push(cartella[j][i]);
+      }
+    }
+    colNumbers.sort((a, b) => a - b);
+
+    let idx = 0;
+    for (let j = 0; j < 3; j++) {
+      if (cartella[j][i] !== 0) {
+        cartella[j][i] = colNumbers[idx];
+        idx++;
+      }
+    }
+  }
+
+  return cartella;
+};
