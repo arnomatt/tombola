@@ -50,5 +50,31 @@ const pickNumbers = () => {
     picks.set(bucket, picksFromCurrentBucket + 1);
   }
 
-  return Array.from(numbers);
+  return numbers;
 };
+
+export const generaCartella = () => {
+  const numbers = pickNumbers();
+  const cartella: number[][] = [[], [], []];
+
+  if (numbers.has(90)) {
+    cartella[2].push(90);
+    numbers.delete(90);
+  }
+
+  let index = 0;
+
+  while (numbers.size > 0) {
+    const pickedIndex = Math.floor(Math.random() * numbers.size);
+    const pickedNumber = Array.from(numbers)[pickedIndex];
+    cartella[index % 3].push(pickedNumber);
+    numbers.delete(pickedNumber);
+    index++;
+  }
+
+  cartella.map((row) => row.sort((a, b) => a - b));
+
+  return cartella;
+};
+
+console.log(generaCartella());
