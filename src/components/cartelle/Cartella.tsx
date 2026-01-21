@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './Cartella.css';
 
 interface CartellaProps {
+    id: number;
     numbers: number[][]; // 3 rows x 9 columns, 0 means empty cell
 }
 
@@ -35,19 +36,22 @@ const useCartella = (numbers: number[]): [Map<string, boolean>, (number: number)
 }
 
 export const Cartella = (props: CartellaProps) => {
-    const { numbers } = props;
+    const { numbers, id } = props;
     const [cartella, handleNumberClick] = useCartella([...numbers[0], ...numbers[1], ...numbers[2]]);
 
     return (
-        <div className="cartella">
-            {numbers.map((row, idr) => row.map((number, idx) =>
-                number ?
-                    <button className={cartella.get(number.toString()) ? "casella selezionata" : "casella"}
-                        key={`${idr}` + `${idx}`}
-                        onClick={() => handleNumberClick(number)}>
-                        {number}
-                    </button> :
-                    <div className="casella vuota" key={idx}></div>))}
+        <div>
+            <div className="title">Cartella no. {id}</div>
+            <div className="cartella">
+                {numbers.map((row, idr) => row.map((number, idx) =>
+                    number ?
+                        <button className={cartella.get(number.toString()) ? "casella selezionata" : "casella"}
+                            key={`${idr}` + `${idx}`}
+                            onClick={() => handleNumberClick(number)}>
+                            {number}
+                        </button> :
+                        <div className="casella vuota" key={idx}></div>))}
+            </div>
         </div>
     )
 }

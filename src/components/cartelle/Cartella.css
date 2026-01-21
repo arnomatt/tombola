@@ -3,8 +3,20 @@
     grid-auto-flow: row;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    border-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     border: 1px solid black;
+}
+
+.title {
+    height: 1.5em;
+    background: var(--tertiary-color);
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0 0.8em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .casella {
@@ -29,16 +41,8 @@
     }
 }
 
-.cartella .casella:nth-child(1) {
-    border-radius: 9px 0px 0px 0px;
-}
-
 .cartella .casella:nth-child(19) {
     border-radius: 0px 0px 0px 9px;
-}
-
-.cartella .casella:nth-child(9) {
-    border-radius: 0px 9px 0px 0px;
 }
 
 .cartella .casella:nth-child(27) {

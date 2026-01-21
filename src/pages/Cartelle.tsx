@@ -9,8 +9,8 @@ export const Cartelle = () => {
     return (
         <div className='cartelle'>
             {num ? Array.from({ length: parseInt(num) }).map((_, i) => (
-                <Cartella key={i} numbers={buildCartella()}></Cartella>
-            )) : <Cartella numbers={buildCartella()}></Cartella>}
+                <Cartella key={i} numbers={buildCartella()} id={i + 1}></Cartella>
+            )) : <Cartella numbers={buildCartella()} id={1}></Cartella>}
         </div>
     )
 }
