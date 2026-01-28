@@ -7,10 +7,10 @@
     width: 100%;
     box-sizing: border-box;
     height: 2em;
-    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     padding: 10px 30px;
-    border: 1px solid black;
     font-size: 32px;
+    background-color: white;
+    border-bottom: 2px solid black;
 }
 
 .navBar a {

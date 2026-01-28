@@ -7,7 +7,7 @@ import { Tabellone } from './pages/Tabellone'
 import { Cartelle } from './pages/Cartelle'
 import { NavBar } from './components/navigation/NavBar'
 import { Modal } from './components/modal/Modal'
-import { ModalContext } from './contexts/modalContext'
+import { ModalContext } from './contexts/ModalContext'
 
 function App() {
   const [isModalVisible, setModalVisibility] = useState(false);
