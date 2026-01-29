@@ -33,14 +33,7 @@ export const Modal = () => {
     return (
         <div className='modal' ref={modalRef}>
             <div className='buttons'>
-                <button onClick={() => handleClick(1)}>1 Cartella</button>
-                <button onClick={() => handleClick(2)}>2 Cartelle</button>
-                <button onClick={() => handleClick(3)}>3 Cartelle</button>
-                <button onClick={() => handleClick(4)}>4 Cartelle</button>
-                <button onClick={() => handleClick(5)}>5 Cartelle</button>
-                <button onClick={() => handleClick(6)}>6 Cartelle</button>
-                <button onClick={() => handleClick(7)}>7 Cartelle</button>
-                <button onClick={() => handleClick(8)}>8 Cartelle</button>
+                {Array.from({ length: 8 }).map((_, i) => <button onClick={() => handleClick(i + 1)}>{i + 1} {i === 0 ? 'Cartella' : 'Cartelle'}</button>)}
             </div>
             <button onClick={() => context?.setModalVisibility(false)}>Close</button>
         </div >
