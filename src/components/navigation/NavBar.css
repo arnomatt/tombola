@@ -14,23 +14,25 @@
     gap: 1em;
 }
 
-.navBar a {
-    color: var(--text-color);
+.navBar button:hover,
+.navBar button:focus {
+    color: var(--text-color-hover);
 }
 
 .navBar button {
-    color: var(--text-color);
     background-color: transparent;
     border: none;
 }
 
-@media (max-width: 500px) {
-    .navBar {
-        font-size: 1em;
-    }
+.active {
+    color: var(--text-color-hover);
 }
 
-@media (max-width: 420px) {
+.inactive {
+    color: var(--text-color);
+}
+
+@media (max-width: 500px) {
     .navBar {
         font-size: 1em;
     }
