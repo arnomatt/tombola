@@ -51,13 +51,14 @@ button {
   font-family: inherit;
   background-color: var(--background);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color background-color 0.25s;
   color: black;
   background-repeat: repeat;
   border: 1px solid black;
 }
 button:hover {
   border-color: #646cff;
+  background-color: var(--secondary-color);
 }
 button:focus,
 button:focus-visible {

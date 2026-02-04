@@ -29,7 +29,7 @@ export const Landing = (props: LandingProps) => {
                 </ul>
             </div>
 
-            <div className='buttons'>
+            <div className='landingButtons'>
                 <button
                     className='mainButton'
                     onClick={handleClick}

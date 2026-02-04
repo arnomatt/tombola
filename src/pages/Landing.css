@@ -11,3 +11,8 @@
     height: 4rem;
     font-size: 1.5rem;
 }
+
+.landingButtons {
+    display: flex;
+    gap: 1.5em;
+}

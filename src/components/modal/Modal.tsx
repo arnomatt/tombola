@@ -44,8 +44,8 @@ export const Modal = (props: ModalProps) => {
         <div className={isClosing ? 'modal closing' : 'modal'} ref={modalRef} onAnimationEnd={handleAnimationEnd}>
             <div className='buttons'>
                 {Array.from({ length: 8 }).map((_, i) => <button onClick={() => handleClick(i + 1)}>{i + 1} {i === 0 ? 'Cartella' : 'Cartelle'}</button>)}
+                <button onClick={() => setModalVisibility(false)}>Close</button>
             </div>
-            <button onClick={() => setModalVisibility(false)}>Close</button>
         </div >
     )
 }
