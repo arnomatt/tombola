@@ -1,0 +1,25 @@
+.tabellone {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(5, 4rem) calc(4rem + 16px) repeat(4, 4rem);
+    gap: 5px;
+    padding: 1em;
+    margin: 4em;
+}
+
+.tabellone .casella:nth-child(n+31):nth-child(-n+40),
+.tabellone .casella:nth-child(n+61):nth-child(-n+70) {
+    margin-top: 0.7em;
+}
+
+.tabellone .casella:nth-child(10n+6) {
+    margin-left:16px;
+}
+
+.container {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+}
