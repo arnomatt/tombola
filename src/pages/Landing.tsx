@@ -31,11 +31,11 @@ export const Landing = (props: LandingProps) => {
 
             <div className='landingButtons'>
                 <button
-                    className='mainButton'
+                    className='mainButton btnhover'
                     onClick={handleClick}
                 >Cartelle</button>
                 <button
-                    className='mainButton'
+                    className='mainButton btnhover'
                     onClick={handleNavigate}
                 >Tabellone</button>
             </div>
