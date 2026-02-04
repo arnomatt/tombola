@@ -1,6 +1,13 @@
 import './Landing.css';
 
-export const Landing = () => {
+interface LandingProps {
+    setModalVisibility: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export const Landing = (props: LandingProps) => {
+    const handleClick = () => {
+        props.setModalVisibility(true);
+    }
 
     return (
         <div className='landing'>
@@ -13,6 +20,16 @@ export const Landing = () => {
                     <li>📋 <strong>Scegli Cartelle</strong> per selezionare un numero di cartelle con cui giocare</li>
                     <li>🎯 <strong>Scegli Tabellone</strong> per essere il tabellone (ed estrarre i numeri!)</li>
                 </ul>
+            </div>
+
+            <div className='buttons'>
+                <button
+                    className='mainButton'
+                    onClick={handleClick}
+                >Cartelle</button>
+                <button
+                    className='mainButton'
+                >Tabellone</button>
             </div>
 
             <p className='enjoy'>🎉 Buon Divertimento! 🎉</p>

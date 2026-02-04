@@ -6,6 +6,8 @@ import './Cartelle.css';
 export const Cartelle = () => {
     const { num } = useParams();
 
+    console.log("Cartelle render")
+
     return (
         <div className='cartelle'>
             {num ? Array.from({ length: parseInt(num) }).map((_, i) => (
