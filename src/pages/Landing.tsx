@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router';
 import './Landing.css';
 
 interface LandingProps {
@@ -5,8 +6,14 @@ interface LandingProps {
 }
 
 export const Landing = (props: LandingProps) => {
+    const navigate = useNavigate();
+
     const handleClick = () => {
         props.setModalVisibility(true);
+    }
+
+    const handleNavigate = () => {
+        navigate(`/tabellone`);
     }
 
     return (
@@ -29,6 +36,7 @@ export const Landing = (props: LandingProps) => {
                 >Cartelle</button>
                 <button
                     className='mainButton'
+                    onClick={handleNavigate}
                 >Tabellone</button>
             </div>
 
