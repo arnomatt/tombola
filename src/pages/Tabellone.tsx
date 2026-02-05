@@ -20,8 +20,20 @@ const useTabellone = (): [Map<number, boolean>, (number: number) => void] => {
     return [tabellone, handleClick];
 }
 
+const usePesca = (): [number, () => void] => {
+    const [pescato, setPescato] = useState(1);
+
+    const handlePescaClick = () => {
+        const num = Math.floor((Math.random() * 90 + 1));
+        setPescato(num);
+    }
+
+    return [pescato, handlePescaClick]
+}
+
 export const Tabellone = () => {
     const [tabellone, handleClick] = useTabellone();
+    const [pescato, handlePescaClick] = usePesca();
 
     return (
         <div className='container'>
@@ -34,6 +46,11 @@ export const Tabellone = () => {
                         {key}
                     </button>
                 )}
+            </div>
+            <div className='pescaContainer'>
+                <button className='pesca' onClick={handlePescaClick}>
+                    <p>{pescato}</p>
+                </button>
             </div>
         </div >
     )
