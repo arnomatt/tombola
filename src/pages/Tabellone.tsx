@@ -49,7 +49,7 @@ export const Tabellone = () => {
             </div>
             <div className='pescaContainer'>
                 <button className='pesca' onClick={handlePescaClick}>
-                    <p>{pescato}</p>
+                    <p className='pescato'>{pescato}</p>
                 </button>
             </div>
         </div >
