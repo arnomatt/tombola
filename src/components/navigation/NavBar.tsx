@@ -19,7 +19,7 @@ export const NavBar = () => {
                 className={({ isActive }) =>
                     isActive ? "active" : "inactive"
                 }
-                to='/'
+                to='/tombola/'
                 onClick={handleHomeClick}
             >
                 Home

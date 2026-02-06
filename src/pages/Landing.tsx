@@ -13,7 +13,7 @@ export const Landing = (props: LandingProps) => {
     }
 
     const handleNavigate = () => {
-        navigate(`/tabellone`);
+        navigate(`/tombola/tabellone/`);
     }
 
     return (

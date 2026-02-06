@@ -14,9 +14,9 @@ interface AppRoutesProps {
 const AppRoutes = React.memo((props: AppRoutesProps) => {
   return (
     <Routes>
-      <Route path="/" element={<Landing setModalVisibility={props.setModalVisibility} />} />
-      <Route path="/tabellone" element={<Tabellone />} />
-      <Route path="/cartelle/:num" element={<Cartelle />} />
+      <Route path="/tombola/" element={<Landing setModalVisibility={props.setModalVisibility} />} />
+      <Route path="/tombola/tabellone/" element={<Tabellone />} />
+      <Route path="/tombola/cartelle/:num" element={<Cartelle />} />
     </Routes>
   )
 })

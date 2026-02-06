@@ -26,9 +26,9 @@ export const Modal = (props: ModalProps) => {
 
     const handleClick = (num?: number) => {
         if (num) {
-            navigate(`/cartelle/${num}`);
+            navigate(`/tombola/cartelle/${num}`);
         } else {
-            navigate(`/cartelle`);
+            navigate(`/tombola/cartelle`);
         }
         setIsClosing(true);
     }
