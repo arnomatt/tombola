@@ -1,0 +1,74 @@
+/* Firework Animation */
+.firework {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+@keyframes explode {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.particle {
+    animation: explode 1.2s ease-out forwards;
+}
+
+.particle-1 {
+    animation-name: explode-1;
+}
+.particle-2 {
+    animation-name: explode-2;
+}
+.particle-3 {
+    animation-name: explode-3;
+}
+.particle-4 {
+    animation-name: explode-4;
+}
+.particle-5 {
+    animation-name: explode-5;
+}
+.particle-6 {
+    animation-name: explode-6;
+}
+.particle-7 {
+    animation-name: explode-7;
+}
+.particle-8 {
+    animation-name: explode-8;
+}
+
+@keyframes explode-1 {
+    100% { transform: translate(0, -60px); opacity: 0; }
+}
+@keyframes explode-2 {
+    100% { transform: translate(42px, -42px); opacity: 0; }
+}
+@keyframes explode-3 {
+    100% { transform: translate(60px, 0); opacity: 0; }
+}
+@keyframes explode-4 {
+    100% { transform: translate(42px, 42px); opacity: 0; }
+}
+@keyframes explode-5 {
+    100% { transform: translate(0, 60px); opacity: 0; }
+}
+@keyframes explode-6 {
+    100% { transform: translate(-42px, 42px); opacity: 0; }
+}
+@keyframes explode-7 {
+    100% { transform: translate(-60px, 0); opacity: 0; }
+}
+@keyframes explode-8 {
+    100% { transform: translate(-42px, -42px); opacity: 0; }
+}
