@@ -15,8 +15,6 @@ const useTabellone = (): [Map<number, boolean>, number, () => void] => {
             const index = Math.floor((Math.random() * itemsLeft.length));
             const num = itemsLeft[index][0];
 
-            console.log(itemsLeft);
-
             setTabellone(prev => {
                 const newTabellone = new Map(prev);
                 newTabellone.set(num, !newTabellone.get(num))

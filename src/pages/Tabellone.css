@@ -48,3 +48,42 @@
     font-weight: bold;
     color: var(--text-color);
 }
+
+@media (max-width: 1200px) {
+    .tabellone {
+        margin: 2em;
+        grid-template-columns: repeat(5, 2rem) calc(2rem + 4px) repeat(4, 2rem);
+        gap: 4px;
+    }
+
+    .tabellone .casella:nth-child(n+31):nth-child(-n+40),
+    .tabellone .casella:nth-child(n+61):nth-child(-n+70) {
+        margin-top: 0.5em;
+    }
+
+    .tabellone .casella:nth-child(10n+6) {
+        margin-left:4px;
+    }
+
+    .pesca {
+        margin-top: 0;
+        margin-right: 0;
+        width: 8em;
+        height: 8em;
+    }
+
+    .pescato {
+        font-size: 2em;
+    }
+
+    .pescaContainer {
+        width: 14em;
+    }
+
+    .container {
+        margin-top: 4em;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+}

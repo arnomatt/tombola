@@ -18,7 +18,7 @@ export const Landing = (props: LandingProps) => {
 
     return (
         <div className='landing'>
-            <h1>🫘 Welcome to Tombola! 🫘</h1>
+            <h1>🫘 Tombola! 🫘</h1>
             <p className='subtitle'>Il gioco classico italiano che unisce famiglie e amici!</p>
 
             <div className='instructions'>
