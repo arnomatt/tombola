@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './Cartella.css';
-import { Score } from './Score';
 
 interface CartellaProps {
     id: number;
@@ -56,10 +55,7 @@ export const Cartella = (props: CartellaProps) => {
 
     return (
         <div>
-            <div className="title">
-                <div>Cartella #{id}</div>
-                <Score score={scores.get(score) || '-'}></Score>
-            </div>
+            <div className="title">Cartella #{id} - Score: {scores.get(score) || '-'}</div>
             <div className="cartella">
                 {numbers.map((row, idr) => row.map((number, idx) =>
                     number ?
