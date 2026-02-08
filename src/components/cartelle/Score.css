@@ -1,0 +1,16 @@
+.score {
+    display: grid;
+}
+
+.score > * {
+    grid-area: 1 / 1;
+}
+
+.scoreContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+p {
+    margin: 0;
+}

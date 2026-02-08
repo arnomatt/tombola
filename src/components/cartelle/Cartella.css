@@ -9,7 +9,10 @@
 }
 
 .title {
+    display: flex;
+    flex-direction: row;
     height: 1.5em;
+    align-items: start;
     background: var(--tertiary-color);
     color: var(--text-color);
     font-size: 18px;
