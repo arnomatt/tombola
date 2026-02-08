@@ -15,7 +15,7 @@ export const Cartelle = () => {
 
     return (
         <div className='cartelle'>
-            {buildCartelle};
+            {buildCartelle}
         </div>
     )
 }
